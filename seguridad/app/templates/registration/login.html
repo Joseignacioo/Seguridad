@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: #000000;
+            font-size: 0.8rem;
+            border: none;
+            margin-top: 10px;
+            border-radius: 20px;
+            color: #fff;
+            padding: 10px 30px 10px 30px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h5>PRUEBA NUMERO 3</h5>
+        </div>
+    </header>
+    <!-- END ENCABEZADO -->
+    <div class="publicidad">
+        <h3>DETECTAR VULNERABILIDADES</h3>
+    </div>
+    <!-- main  -->
+    <main>
+        <div class="card">
+            <div class="title-card">
+                <h4>INICIAR SESION</h4>
+            </div>
+            <div class="body-card">
+                <form action="{% url 'login' %}" method="post" style="display: grid; justify-content: center;">
+                    {% csrf_token %}
+                    {{form}}
+                    <input class="btn" type="submit" value="Ingresar">
+                </form>
+            </div>
+            <div class="footer-card">
+                <p>Comprobar las VULNERABILIDADES</p>
+            </div>
+        </div>
+    </main>
+    <!-- END MAIN -->
+</body>
+</html>

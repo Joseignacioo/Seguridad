@@ -1,0 +1,70 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+<style>
+    :root{
+        /* backgraund */
+        --backgaround-aside: #043e6e9e;
+        --backgaround-nav: #1b629575;
+        --backgaround-red: #ff5d5d;
+        --backgaround-green: #f89aad;
+        --backgaround-blue: #8fcbcb;
+        
+        /* boxshadow */
+        --boxshadow-card: 0px 5px 15px 0px #80808079;
+        --boxshadow-table: 0px 0px 10px #e2e2e2;
+
+        /* colors-text */
+        --primer-text-color: #000000;
+        --segundo-text-color: #373737;
+        --tercer-text-color: #fff;
+
+        /* font size */
+        --text-size-small: 1rem;
+        --text-size-medium: 1.5rem;
+        --text-size-large: 2rem;
+    }
+</style>
+
+{% block contenido %}
+
+<section>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-header">
+                <h2>Users</h2>
+            </div>
+            <hr>
+            <div class="card-main">
+                <table class="table" style="margin: 2rem;">
+                    <thead>
+                        <tr class="tr-header" style="background-color: var(--backgaround-red);">
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">ID</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Rut</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Name</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Last Name</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Category</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Date Register</th>
+                            <th class="th" style="padding: 1rem 3rem 1rem 3rem;">Date Register</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in consultas %}
+                        <tr style="box-shadow: var(--boxshadow-table);">
+                            <td class="td" style="padding: 0.5rem 5rem 0.5rem 5rem;">1</td>
+                            <td class="td">{{c.nombre_usuario }}</td>
+                            <td class="td">{{c.nombre }}</td>
+                            <td class="td">{{c.apellidos }}</td>
+                            <td class="td">{{c.email }}</td>
+                            <td class="td">{{c.ultimo_login }}</td>
+                            <td class="td">{{c.roles}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
